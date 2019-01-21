@@ -1,0 +1,14 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd"
+	id="WebApp_ID" version="4.0">
+	<display-name>AES Scrambler</display-name>
+	<servlet>
+		<servlet-name>EntryControllerServlet</servlet-name>
+		<servlet-class>com.techbrunch.innovation.aes_scrambler.controller.EntryControllerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EntryControllerServlet</servlet-name>
+		<url-pattern>/start</url-pattern>
+	</servlet-mapping>
+</web-app>

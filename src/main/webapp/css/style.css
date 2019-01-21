@@ -1,0 +1,38 @@
+footer {
+	background-color: #4459C6;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 100px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.footerTextClass {
+	text-align: center;
+	padding: 30px;
+	color: #fff;
+}
+
+ul {
+	list-style-type: none;
+}
+
+#selectUserOperation, #selectJavaVersion, #selectAESEncryption,
+	#selectAESAlgorithm {
+	float: left;
+	width: 25%;
+}
+
+#inputAesKeyValue, #inputAesSaltValue {
+	float: left;
+	width: 25%;
+}
+
+.label {
+	font-weight: bold;
+}
+
+.inputTextbox {
+	width: 300px;
+}
