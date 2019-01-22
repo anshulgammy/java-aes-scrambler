@@ -9,6 +9,6 @@ public class ServeHomePage {
 	@RequestMapping("/start")
 	public String startHtml() {
 		System.out.println("Inside startHtml()...");
-		return "home";
+		return "redirect:/pages/home.html";
 	}
 }
