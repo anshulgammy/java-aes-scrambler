@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<base href="WEB-INF/">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/angular.js"></script>
+<script src="../js/AesController.js"></script>
+<title>AES Scrambler/Unscrambler</title>
+</head>
+<body ng-app="AesApp" ng-controller="AesController">
+	<section>
+		<article>
+			<header>
+				<h2>AES Scrambler/Unscrambler</h2>
+			</header>
+			<div>
+				<div id="selectUserOperation">
+					<p class="label">Select an operation:</p>
+					<ul>
+						<li><input name="selectedOperation" type="radio"
+							value="encrypt" ng-click="setOperation('encrypt')" />Encrypt</li>
+						<li><input name="selectedOperation" type="radio"
+							value="decrypt" ng-click="setOperation('decrypt')" />Decrypt</li>
+					</ul>
+				</div>
+				<div id="selectJavaVersion" ng-hide="selectJavaVersionFlag">
+					<p class="label">Select your Java Version:</p>
+					<ul>
+						<li><input name="selectedJavaVersion" type="radio"
+							value="java6" ng-click="setJavaVersion('java6')" />Java 6</li>
+						<li><input name="selectedJavaVersion" type="radio"
+							value="java7" ng-click="setJavaVersion('java7')" />Java 7</li>
+						<li><input name="selectedJavaVersion" type="radio"
+							value="java8" ng-click="setJavaVersion('java8')" />Java 8</li>
+						<li><input name="selectedJavaVersion" type="radio"
+							value="java9" ng-click="setJavaVersion('java9')" />Java 9</li>
+						<li><input name="selectedJavaVersion" type="radio"
+							value="java8" ng-click="setJavaVersion('java10')" />Java 10</li>
+					</ul>
+				</div>
+				<div id="selectAESEncryption" ng-hide="selectEncryptionFlag">
+					<p class="label">Select your AES Encryption Bits:</p>
+					<ul>
+						<li><input name="selectedEncryptionBits" type="radio"
+							value="128" ng-click="setEncryptionBits('128')" />128</li>
+						<li><input name="selectedEncryptionBits" type="radio"
+							value="256" ng-click="setEncryptionBits('256')" />256</li>
+					</ul>
+				</div>
+				<div id="selectAESAlgorithm" ng-hide="selectAlgorithmFlag">
+					<p class="label">Select your AES/CBC/PKCS5Padding algorithm for
+						the suggested Java Version:</p>
+					<select ng-model="selectedAesAlgorithm"
+						ng-change="setAesAlgorithm();">
+						<option value="volvo">Volvo</option>
+						<option value="saab">Saab</option>
+					</select>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+			<div ng-hide="inputKeysFlag">
+				<div id="inputAesKeyValue">
+					<p class="label">Provide your AES Key:</p>
+					<input type="text" id="aesKeyValue" ng-bind="aesKeyValue" width="200" class="inputTextbox"/>
+				</div>
+				<div id="inputAesSaltValue">
+					<p class="label">Provide your AES Salt:</p>
+					<input type="text" id="aesSaltValue" ng-bind="aesSaltValue" class="inputTextbox"/>
+				</div>
+				<div style="clear: both;"></div>
+				<div id="inputCommaSeparatedVals">
+					<p class="label">Provide Comma Separated values here:</p>
+					<textarea rows="5" cols="42"></textarea>
+				</div>
+				<div id="inputAesSaltValue">
+					<button ng-click="performAesOperation();">{{selectedOperation}}</button>
+				</div>
+			</div>
+		</article>
+	</section>
+
+	<footer>
+		<div class="footerTextClass">Developed by Anshul Gautam</div>
+	</footer>
+
+</body>
+</html>
