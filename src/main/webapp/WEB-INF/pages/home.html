@@ -29,15 +29,9 @@
 					<p class="label">Select your Java Version:</p>
 					<ul>
 						<li><input name="selectedJavaVersion" type="radio"
-							value="java6" ng-click="setJavaVersion('java6')" />Java 6</li>
+							value="java67" ng-click="setJavaVersion('java67')" />Java 6 or 7</li>
 						<li><input name="selectedJavaVersion" type="radio"
-							value="java7" ng-click="setJavaVersion('java7')" />Java 7</li>
-						<li><input name="selectedJavaVersion" type="radio"
-							value="java8" ng-click="setJavaVersion('java8')" />Java 8</li>
-						<li><input name="selectedJavaVersion" type="radio"
-							value="java9" ng-click="setJavaVersion('java9')" />Java 9</li>
-						<li><input name="selectedJavaVersion" type="radio"
-							value="java8" ng-click="setJavaVersion('java10')" />Java 10</li>
+							value="java891011" ng-click="setJavaVersion('java891011')" />Java 8, 9, 10 or 11</li>
 					</ul>
 				</div>
 				<div id="selectAESEncryption" ng-hide="selectEncryptionFlag">
@@ -50,8 +44,7 @@
 					</ul>
 				</div>
 				<div id="selectAESAlgorithm" ng-hide="selectAlgorithmFlag">
-					<p class="label">Select your AES/CBC/PKCS5Padding algorithm for
-						the suggested Java Version:</p>
+					<p class="label">Select your SecretKeyFactory Instance for 'AES/CBC/PKCS5Padding':</p>
 					<select ng-model="selectedAesAlgorithm"
 						ng-change="setAesAlgorithm();">
 						<option value="volvo">Volvo</option>
