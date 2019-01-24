@@ -15,9 +15,8 @@ public class CommonUtil {
 	public static String[] readFromFile(final String fileName) {
 		final List<String> algorithms = new ArrayList<String>();
 		BufferedReader bufferedReader = null;
-		final String fileNameToRead = fileName + ".txt";
 		try {
-			final InputStream inputStream = CLASS_LOADER.getResourceAsStream(fileNameToRead);
+			final InputStream inputStream = CLASS_LOADER.getResourceAsStream(fileName);
 		    final InputStreamReader streamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
 		    bufferedReader = new BufferedReader(streamReader);
 			String str = null;
@@ -33,6 +32,7 @@ public class CommonUtil {
 				e.printStackTrace();
 			}
 		}
-		return (String[]) algorithms.toArray();
+		final String[] stringArray = algorithms.toArray(new String[algorithms.size()]);
+		return stringArray;
 	}
 }

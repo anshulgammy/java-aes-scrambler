@@ -17,13 +17,13 @@ import com.scrambler.aes.util.AesConstants;
 public class Encrypt {
 
 	public static String encrypt(final String stringToEncrypt, final String secretKey, final String salt,
-			final String encryptionBits) {
+			final String encryptionBits, final String secretFactoryInstance) {
 		try {
 			final byte[] iv = AesConstants.INTIALIZATION_VECTOR;
 			final byte[] saltBytes = salt.getBytes(StandardCharsets.UTF_8);
 			IvParameterSpec ivspec = new IvParameterSpec(iv);
 
-			SecretKeyFactory factory = SecretKeyFactory.getInstance(AesConstants.SECRET_FACT_INSTANCE);
+			SecretKeyFactory factory = SecretKeyFactory.getInstance(secretFactoryInstance);
 			KeySpec spec = new PBEKeySpec(secretKey.toCharArray(), saltBytes, 65536, Integer.parseInt(encryptionBits));
 			SecretKey tmp = factory.generateSecret(spec);
 			SecretKeySpec generatedKey = new SecretKeySpec(tmp.getEncoded(), AesConstants.ALGO_TYPE);

@@ -1,5 +1,8 @@
 package com.scrambler.aes.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class JavaAlgorithms {
 	public String javaVersion;
 	public String[] javaAlgorithms;
