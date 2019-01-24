@@ -63,8 +63,7 @@
 						</goals>
 						<phase>install</phase>
 						<configuration>
-							<port>1234</port>
-							<path>/</path>
+							<path>/scrambler</path>
 							<finalName>aes_scrambler.jar</finalName>
 							<charset>utf-8</charset>
 						</configuration>

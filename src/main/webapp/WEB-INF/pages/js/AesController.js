@@ -5,7 +5,7 @@ var getAlgorithmsEndpoint = httpProtocol + "//" + contextPath + "/"
 var getScrambleEndpointUrl = httpProtocol + "//" + contextPath + "/"
 + "scrambler/scramble/getscrambles";
 var getUnscrambleEndpointUrl = httpProtocol + "//" + contextPath + "/"
-+ "scrambler/scramble/getalgo";
++ "scrambler/unscramble/getunscrambles";
 
 var app = angular.module('AesApp', []);
 
